@@ -5,31 +5,65 @@
     <style>
         img {
             height: 200px;
+
         }
-    </style>
-     <style>.bg-blue {
+         .textbox {
+        width: 70x;
+        height: 30px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      .button {
+        width: 70px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        background-color: lightgray;
+      }
+      .bg-blue {
         background-color: rgb(21, 124, 235);
       }
     </style>
-       
-      </style>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script >
+        import {mysql} from ('mysql');  
+var con = mysql.createConnection({  
+  host: "localhost",  
+  user: "root",  
+  password: "mysql1234" ,
+  database: "Visitors"
+});  
+
+con.connect(function(err) {  
+  if (err) throw err;  
+  console.log("Connected!");  
+  var sql = "INSERT INTO Visitors (VisID, VisName,VisNumber) VALUES ('1', 'Ajeet Kumar', '0963194709')";  
+  con.query(sql, function (err, result) {  
+  if (err) throw err;  
+  console.log("1 record inserted");  
+  });  
+});
+    </script>
 </head>
 
+
 <body>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-blue">
         <div class="container">
           <a class="navbar-brand mx-auto" href="#">Welcome To Enthalpy</a>
         </div>
       </nav>
       
-    <div class="container">
-        <div class="row">
-            <div class="col">
+    <div class="container bg-gradient">
+      
                 
                 <div class="row">
                     <div class="d-flex justify-content-between">
@@ -81,55 +115,26 @@
                             </div>
                         </div>
                     </div>
+                    <form class="row gy-2 gx-3 align-items-center">
+                        <div class="col-auto">
+                          <label class="visually-hidden" for="autoSizingInput">Name</label>
+                          <input type="text" class="form-control" id="autoSizingInput" placeholder="Name">
+                        </div>
+                        <div class="col-auto">
+                          <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+                          <div class="input-group">
+                            <div class="input-group-text">+249</div>
+                            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Number">
+                          </div>
+                        </div>
+                        <button type="submits" class="btn btn-primary">Submit</button>  
+                        </form>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    </div>
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
-<head>
-    <style>
-      .textbox {
-        width: 70x;
-        height: 30px;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid gray;
-      }
-      .button {
-        width: 70px;
-        height: 30px;
-        margin: 10px;
-        border-radius: 5px;
-        border: 1px solid gray;
-        background-color: lightgray;
-      }
-    </style>
-  </head>
-  <form class="row gy-2 gx-3 align-items-center">
-    <div class="col-auto">
-      <label class="visually-hidden" for="autoSizingInput">Name</label>
-      <input type="text" class="form-control" id="autoSizingInput" placeholder="Name">
-    </div>
-    <div class="col-auto">
-      <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
-      <div class="input-group">
-        <div class="input-group-text">+249</div>
-        <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Number">
-      </div>
-    </div>
-<button type="button" class="btn btn-primary">Submit</button>     
-    </form>
-  
-</div>
-</html>
-
-
-
-
-
 </html>
