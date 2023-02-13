@@ -48,7 +48,7 @@ app
               if (cookie === undefined) {
                 // no: set a new cookie
                 res
-                  .cookie("number", number, { maxAge: 900000, httpOnly: true })
+                  .cookie("number", number, { maxAge: 900000,})
                   .render("final prototype");
               }
             });
